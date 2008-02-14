@@ -6,6 +6,7 @@ Source1:	http://stosberg.net/odt2txt/odt2txt-%{version}.tar.gz.asc
 URL:		http://stosberg.net/odt2txt/
 Summary:	A simple (and stupid) converter from OpenDocument Text to plain text
 Group:		Text tools
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPLv2
 BuildRequires:	zlib-devel
 %description

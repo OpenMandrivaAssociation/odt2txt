@@ -1,6 +1,6 @@
 Name:		odt2txt
 Version:	0.4
-Release:	%mkrel 2
+Release:	%mkrel 3
 Source0:	http://stosberg.net/odt2txt/odt2txt-%{version}.tar.gz
 Source1:	http://stosberg.net/odt2txt/odt2txt-%{version}.tar.gz.asc
 URL:		http://stosberg.net/odt2txt/

@@ -1,6 +1,6 @@
 Name:		odt2txt
 Version:	0.4
-Release:	%mkrel 3
+Release:	%mkrel 5
 Source0:	http://stosberg.net/odt2txt/odt2txt-%{version}.tar.gz
 Source1:	http://stosberg.net/odt2txt/odt2txt-%{version}.tar.gz.asc
 URL:		http://stosberg.net/odt2txt/
@@ -37,3 +37,37 @@ odt2txt is ...
 %doc GPL-2
 %{_bindir}/%{name}
 %{_mandir}/man1/%{name}.1*
+
+
+%changelog
+* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 0.4-3mdv2011.0
++ Revision: 666940
+- mass rebuild
+
+* Fri Dec 03 2010 Oden Eriksson <oeriksson@mandriva.com> 0.4-2mdv2011.0
++ Revision: 607006
+- rebuild
+
+* Wed Dec 16 2009 Jérôme Brenier <incubusss@mandriva.org> 0.4-1mdv2010.1
++ Revision: 479513
+- new version 0.4
+- fix files list
+
+* Fri Sep 04 2009 Thierry Vignaud <tv@mandriva.org> 0.3-5mdv2010.0
++ Revision: 430195
+- rebuild
+
+* Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 0.3-4mdv2009.0
++ Revision: 254393
+- rebuild
+- fix no-buildroot-tag
+
+* Wed Nov 14 2007 Funda Wang <fwang@mandriva.org> 0.3-2mdv2008.1
++ Revision: 108812
+- rebuild
+
+* Wed Oct 31 2007 Nicolas Vigier <nvigier@mandriva.com> 0.3-1mdv2008.1
++ Revision: 104181
+- import odt2txt
+
+

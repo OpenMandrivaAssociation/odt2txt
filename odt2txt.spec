@@ -1,14 +1,14 @@
 Name:		odt2txt
 Version:	0.4
-Release:	%mkrel 5
+Release:	6
 Source0:	http://stosberg.net/odt2txt/odt2txt-%{version}.tar.gz
 Source1:	http://stosberg.net/odt2txt/odt2txt-%{version}.tar.gz.asc
 URL:		http://stosberg.net/odt2txt/
 Summary:	A simple (and stupid) converter from OpenDocument Text to plain text
 Group:		Text tools
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPLv2
-BuildRequires:	zlib-devel
+BuildRequires:	pkgconfig(zlib)
+
 %description
 odt2txt is a command-line tool which extracts the text out of OpenDocument
 Texts produced by OpenOffice.org, StarOffice, KOffice and others.
@@ -27,19 +27,20 @@ odt2txt is ...
 %setup -q
 
 %build
-%{make}
+%setup_compile_flags
+%make
 
 %install
-%{__rm} -Rf %{buildroot}
-%{__make} DESTDIR=%{buildroot} PREFIX=%{_prefix} install
+%makeinstall_std PREFIX=%{_prefix}
 
 %files
-%doc GPL-2
 %{_bindir}/%{name}
 %{_mandir}/man1/%{name}.1*
 
-
 %changelog
+* Sun Jan 13 2013 Per Øyvind Karlsen <peroyvind@mandriva.org> 0.4-6
+- cleanups
+
 * Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 0.4-3mdv2011.0
 + Revision: 666940
 - mass rebuild

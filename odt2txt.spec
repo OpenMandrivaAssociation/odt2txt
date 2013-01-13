@@ -3,6 +3,7 @@ Version:	0.4
 Release:	6
 Source0:	http://stosberg.net/odt2txt/odt2txt-%{version}.tar.gz
 Source1:	http://stosberg.net/odt2txt/odt2txt-%{version}.tar.gz.asc
+Patch0:		odt2txt-0.4-fwhole-program.patch 
 URL:		http://stosberg.net/odt2txt/
 Summary:	A simple (and stupid) converter from OpenDocument Text to plain text
 Group:		Text tools
@@ -25,10 +26,11 @@ odt2txt is ...
 
 %prep
 %setup -q
+%patch0 -p1 -b .whole_program~
 
 %build
 %setup_compile_flags
-%make
+%make WHOLE_PROGRAM=1
 
 %install
 %makeinstall_std PREFIX=%{_prefix}
@@ -39,6 +41,7 @@ odt2txt is ...
 
 %changelog
 * Sun Jan 13 2013 Per Øyvind Karlsen <peroyvind@mandriva.org> 0.4-6
+- add support for building with -fwhole-program (P0)
 - cleanups
 
 * Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 0.4-3mdv2011.0

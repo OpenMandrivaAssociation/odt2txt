@@ -1,0 +1,17 @@
+--- odt2txt-0.4/Makefile~	2013-01-13 05:48:44.231421760 +0100
++++ odt2txt-0.4/Makefile	2013-01-13 05:48:46.681447232 +0100
+@@ -76,8 +76,14 @@ endif
+ BIN = odt2txt$(EXT)
+ MAN = odt2txt.1
+ 
++ifneq ($(WHOLE_PROGRAM), 0)
++	SRC = $(subst .o,.c,$(OBJ))
++$(BIN): $(SRC)
++	$(CC) -o $@ $(CFLAGS) -Os -fwhole-program -flto $(LDFLAGS) -Wl,--no-warn-common $(SRC) $(LIBS)
++else
+ $(BIN): $(OBJ)
+ 	$(CC) -o $@ $(LDFLAGS) $(OBJ) $(LIBS)
++endif
+ 
+ t/test-strbuf: t/test-strbuf.o strbuf.o mem.o
+ t/test-regex: t/test-regex.o regex.o strbuf.o mem.o

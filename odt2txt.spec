@@ -29,8 +29,7 @@ odt2txt is ...
 %patch0 -p1 -b .whole_program~
 
 %build
-%setup_compile_flags
-%make WHOLE_PROGRAM=1
+%make CFLAGS="%{optflags}" LDFLAGS="%{ldflags}" WHOLE_PROGRAM=1
 
 %install
 %makeinstall_std PREFIX=%{_prefix}

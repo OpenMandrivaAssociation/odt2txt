@@ -1,6 +1,6 @@
 Name:		odt2txt
 Version:	0.4
-Release:	6
+Release:	7
 Source0:	http://stosberg.net/odt2txt/odt2txt-%{version}.tar.gz
 Source1:	http://stosberg.net/odt2txt/odt2txt-%{version}.tar.gz.asc
 Patch0:		odt2txt-0.4-fwhole-program.patch 

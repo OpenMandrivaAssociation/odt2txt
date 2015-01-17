@@ -29,6 +29,7 @@ odt2txt is ...
 %apply_patches
 
 %build
+export CC=gcc
 %make CFLAGS="%{optflags}" LDFLAGS="%{ldflags}" WHOLE_PROGRAM=1
 
 %install

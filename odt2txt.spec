@@ -1,7 +1,7 @@
 Summary:	A simple (and stupid) converter from OpenDocument Text to plain text
 Name:		odt2txt
 Version:	0.4
-Release:	14
+Release:	15
 Group:		Text tools
 License:	GPLv2
 Url:		http://stosberg.net/odt2txt/

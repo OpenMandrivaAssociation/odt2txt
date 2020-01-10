@@ -26,7 +26,7 @@ odt2txt is ...
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 export CC=gcc

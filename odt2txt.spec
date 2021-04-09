@@ -1,12 +1,11 @@
 Summary:	A simple (and stupid) converter from OpenDocument Text to plain text
 Name:		odt2txt
-Version:	0.4
-Release:	16
+Version:	0.5
+Release:	1
 Group:		Text tools
 License:	GPLv2
 Url:		http://stosberg.net/odt2txt/
-Source0:	http://stosberg.net/odt2txt/odt2txt-%{version}.tar.gz
-Source1:	http://stosberg.net/odt2txt/odt2txt-%{version}.tar.gz.asc
+Source0:	https://github.com/dstosberg/odt2txt/archive/refs/tags/v%{version}.zip
 Patch0:		odt2txt-0.4-fwhole-program.patch 
 BuildRequires:	pkgconfig(zlib)
 
@@ -29,11 +28,10 @@ odt2txt is ...
 %autopatch -p1
 
 %build
-export CC=gcc
-%make CFLAGS="%{optflags}" LDFLAGS="%{ldflags}" WHOLE_PROGRAM=1
+%make_build CFLAGS="%{optflags}" LDFLAGS="%{ldflags}" WHOLE_PROGRAM=1
 
 %install
-%makeinstall_std PREFIX=%{_prefix}
+%make_install PREFIX=%{_prefix}
 
 %files
 %{_bindir}/%{name}

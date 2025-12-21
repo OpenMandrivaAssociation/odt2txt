@@ -7,6 +7,7 @@ License:	GPLv2
 Url:		https://stosberg.net/odt2txt/
 Source0:	https://github.com/dstosberg/odt2txt/archive/refs/tags/v%{version}.zip
 Patch0:		odt2txt-0.4-fwhole-program.patch 
+BuildRequires:	make
 BuildRequires:	pkgconfig(zlib)
 
 %description
